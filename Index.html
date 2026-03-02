@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chidinma Daniella | Product Manager</title>
+    <style>
+        :root {
+            --bg: #080808;
+            --card: #121212;
+            --text: #FFFFFF;
+            --text-muted: #A0A0A0;
+            --accent: #2E5BFF;
+            --border: #262626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-weight: 800; letter-spacing: -1px; font-size: 1.2rem; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--text-muted); 
+            font-size: 14px; 
+            font-weight: 500; 
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--text); }
+
+        /* --- HERO --- */
+        header {
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .eyebrow {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: clamp(3.5rem, 10vw, 8rem);
+            line-height: 0.9;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            margin-bottom: 30px;
+        }
+        .hero-bio {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--text-muted);
+            max-width: 650px;
+            margin-bottom: 40px;
+        }
+        .hero-bio b { color: var(--text); font-weight: 600; }
+
+        /* --- SECTION GENERIC --- */
+        section { padding: 100px 0; border-top: 1px solid var(--border); }
+        .section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--text-muted);
+            margin-bottom: 60px;
+            display: block;
+        }
+
+        /* --- PROJECTS --- */
+        .project-block {
+            margin-bottom: 80px;
+        }
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .project-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; }
+        .project-tag { 
+            padding: 6px 14px; 
+            border: 1px solid var(--border); 
+            border-radius: 100px; 
+            font-size: 12px; 
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .project-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+        }
+        .doc-item {
+            padding: 15px;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+        .doc-item:hover {
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        /* --- EXPERIENCE / SKILLS --- */
+        .split-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        .exp-item { margin-bottom: 30px; }
+        .exp-item h3 { font-size: 1.2rem; margin-bottom: 5px; }
+        .exp-item .sub { color: var(--accent); font-size: 14px; font-weight: 600; margin-bottom: 10px; display: block; }
+        .exp-item p { color: var(--text-muted); font-size: 15px; }
+
+        .skill-group { margin-bottom: 30px; }
+        .skill-group h4 { font-size: 12px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; letter-spacing: 1px;}
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .skill-tag { background: var(--card); padding: 6px 12px; font-size: 13px; border-radius: 4px; border: 1px solid var(--border); }
+
+        /* --- FOOTER --- */
+        footer { padding: 100px 0; text-align: center; }
+        .footer-cta { font-size: clamp(2rem, 6vw, 4.5rem); font-weight: 900; text-decoration: none; color: var(--text); letter-spacing: -0.04em; }
+        .footer-cta:hover { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .split-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 4rem; }
+            header { height: auto; padding: 100px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="logo">OD.</div>
+            <div class="nav-links">
+                <a href="#work">WORK</a>
+                <a href="#about">ABOUT</a>
+                <a href="mailto:daniela@email.com">CONTACT</a>
+            </div>
+        </nav>
+
+        <header>
+            <span class="eyebrow">Available for Product Roles</span>
+            <h1>CHIDINMA<br>DANIELLA.</h1>
+            <p class="hero-bio">
+                <b>Product Manager</b> & Computer Science Strategist. I translate user research and technical logic into <b>structured digital products</b> that solve real problems.
+            </p>
+            <div class="nav-links" style="margin-top: 20px;">
+                <a href="https://linkedin.com" style="border-bottom: 2px solid var(--accent); padding-bottom: 5px; color: white;">LINKEDIN</a>
+                <a href="mailto:daniela@email.com" style="border-bottom: 2px solid var(--accent); padding-bottom: 5px; color: white;">EMAIL</a>
+            </div>
+        </header>
+
+        <section id="work">
+            <span class="section-title">01 / SELECTED PROJECTS</span>
+            
+            <div class="project-block">
+                <div class="project-meta">
+                    <h2 class="project-title">BuildWith</h2>
+                    <span class="project-tag">Creator Economy + AI</span>
+                </div>
+                <p class="project-desc">
+                    A collaborative platform for creators and brands to discover, ideate with AI, and manage projects. I led the product discovery phase, conducted interviews, and defined the MVP architecture.
+                </p>
+                <div class="doc-grid">
+                    <a href="https://www.figma.com/make/nj1CgEkRyEyVHTqHl2qeSA/Interactive-Product-Prototype?t=OnDgerJkADC2f7BA-20&fullscreen=1" target="_blank" class="doc-item">Interactive Prototype</a>
+                    <a href="https://docs.google.com/document/d/1C0YQC4zJMNVlAKMSmcg6QsBe1gsjyyuJ4-hzQIwb1aY/edit?usp=drivesdk" target="_blank" class="doc-item">Strategy & OKRs</a>
+                    <a href="https://docs.google.com/presentation/d/1WMn3qe398_U_PAvGqni5A7xqVpK_5RNl/edit?usp=drivesdk" target="_blank" class="doc-item">Pitch Presentation</a>
+                    <a href="https://drive.google.com/file/d/1Y5S-3maVB5vwaSRARlIdFr-DISC38WY2/view?usp=drivesdk" target="_blank" class="doc-item">Feature Breakdown</a>
+                    <a href="https://docs.google.com/forms/d/1dodQ3BcHL23oz8D4nWCLVn_3b2Ovy0yATKLWIrJCoqs/edit?usp=drivesdk" target="_blank" class="doc-item">Research Material</a>
+                </div>
+            </div>
+
+            <div class="project-block">
+                <div class="project-meta">
+                    <h2 class="project-title">Telegram Bot Engine</h2>
+                    <span class="project-tag">Python / Automation</span>
+                </div>
+                <p class="project-desc">
+                    Integrated APIs and designed engagement logic for a multi-game Telegram bot. Focused on exception handling and designing seamless interaction flows for high-retention gameplay.
+                </p>
+            </div>
+
+            <div class="project-block" style="margin-bottom: 0;">
+                <div class="project-meta">
+                    <h2 class="project-title">Booking Systems</h2>
+                    <span class="project-tag">SDLC / Analysis</span>
+                </div>
+                <p class="project-desc">
+                    Contributor for a shortlet apartment marketplace. Managed requirements gathering and documentation using the waterfall SDLC model, ensuring alignment between user needs and system design.
+                </p>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="split-grid">
+                <div>
+                    <span class="section-title">02 / EXPERIENCE</span>
+                    <div class="exp-item">
+                        <h3>Sales & Marketing Intern</h3>
+                        <span class="sub">Feranmite Technology</span>
+                        <p>Supported product awareness initiatives and assisted in marketing strategy development while managing customer feedback loops.</p>
+                    </div>
+                    <div class="exp-item">
+                        <h3>Product Builder</h3>
+                        <span class="sub">Academic & Personal Lab</span>
+                        <p>Bridging the gap between CS technicalities and business value through end-to-end project management.</p>
+                    </div>
+                </div>
+                <div>
+                    <span class="section-title">03 / CAPABILITIES</span>
+                    <div class="skill-group">
+                        <h4>Product</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Discovery</span><span class="skill-tag">User Research</span><span class="skill-tag">MVP Definition</span><span class="skill-tag">TAM/SAM/SOM</span><span class="skill-tag">Strategy</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Design</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Figma AI</span><span class="skill-tag">Wireframing</span><span class="skill-tag">UX Thinking</span><span class="skill-tag">Sitemaps</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Tools</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Jira</span><span class="skill-tag">ClickUp</span><span class="skill-tag">Google Workspace</span><span class="skill-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <span class="section-title">GET IN TOUCH</span>
+            <a href="mailto:daniela@email.com" class="footer-cta">HELLO@CHIDINMA.PM</a>
+            <p style="margin-top: 40px; color: var(--text-muted); font-size: 14px;">Lagos, Nigeria • 2026</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+
